@@ -13,7 +13,7 @@ export default async function Page() {
   }
 
   return (
-    <div>
+    <div style={{ width: "100%", height: "100vh" }}>
       <Chat accessToken={accessToken} />
     </div>
   );
