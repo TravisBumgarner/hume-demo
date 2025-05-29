@@ -4,15 +4,21 @@ import { VoiceProvider } from "@humeai/voice-react";
 import Messages from "./Messages";
 import Controls from "./Controls";
 
+const CONFIG_ID = "";
+
 export default function ClientComponent({
   accessToken,
 }: {
   accessToken: string;
 }) {
+  if (CONFIG_ID === "") {
+    throw new Error("Please set the CONFIG_ID constant in components/Chat.tsx");
+  }
+
   return (
     <div>
       <VoiceProvider
-        configId="6de725d1-0317-4056-ba11-c093284e8ec6"
+        configId={CONFIG_ID}
         auth={{ type: "accessToken", value: accessToken }}
       >
         <Controls />
